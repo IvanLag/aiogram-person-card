@@ -1,10 +1,7 @@
 import sqlite3
-
+from bot_setup import DB_NAME
 
 async def create_customers_db():
-    global DB_NAME
-    DB_NAME = "person_db.db"
-
     with sqlite3.connect(DB_NAME) as sqlite_conn:
         sql_request = """CREATE TABLE IF NOT EXISTS customers (
             id integer PRIMARY KEY,
